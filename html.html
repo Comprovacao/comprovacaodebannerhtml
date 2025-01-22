@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Peças</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #E6F7FF;
+            color: #333;
+        }
+
+        header {
+            background-color: #292828;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+        header .details {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 0.9em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table thead {
+            background-color: #292828;
+            color: #fff;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tbody tr:hover {
+            background-color: #E0F3FF;
+        }
+
+        .btn-view {
+            background-color: #005B99;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-view:hover {
+            background-color: #003D66;
+        }
+
+        .gif-viewer {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .gif-viewer img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .gif-viewer .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .show-all {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .show-all img {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            max-width: 300px;
+            max-height: 200px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .show-all img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="details">
+        <div>CLIENTE: GDF</div>
+        <div>AGÊNCIA: NOVA</div>
+        <div>CAMPANHA: BALANÇO INSTITUCIONAL FINAL DE ANO</div>
+        <div>DATA: 13/12/2024</div>
+    </div>
+    <h1>VER PEÇAS</h1>
+</header>
+
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>ITEM</th>
+                <th>LINHA CRIATIVA</th>
+                <th>VEÍCULO</th>
+                <th>DIMENSÃO</th>
+                <th>PESO</th>
+                <th>TEMPO</th>
+                <th>LOOPING</th>
+                <th>COMPLEXIDADE</th>
+                <th>TIPO</th>
+                <th>AÇÃO</th>
+            </tr>
+        </thead>
+        <tbody>
+                <td>1</td>
+                <td>RESTAURANTE COMUNITÁRIO</td>
+                <td>Padrão</td>
+                <td>300x50</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_300x50.gif.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                 <td>2</td>
+                <td>RESTAURANTE COMUNITÁRIO</td>
+                <td>Padrão</td>
+                <td>300x100</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_300X100.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>RESTAURANTE COMUNITÁRIO</td>
+                <td>Padrão</td>
+                <td>300x250</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_300x250.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>RESTAURANTE COMUNITÁRIO</td>
+                <td>Padrão</td>
+                <td>300x300</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_300x300.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>RESTAURANTE COMUNITÁRIO</td>
+                <td>Padrão</td>
+                <td>300x600</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+        <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_300x600.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>RESTAURANTE COMUNITÁRIO</td>
+                <td>Padrão</td>
+                <td>320x50</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_320x50.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>RESTAURANTE COMUNITÁRIO</td>
+                <td>Padrão</td>
+                <td>320x100</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_320x100.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>RESTAURANTE COMUNITÁRIO</td>
+                <td>Padrão</td>
+                <td>468x60</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_468x60.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>RESTAURANTE COMUNITÁRIO</td>
+                <td>Padrão</td>
+                <td>560x735</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_560x735.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>RESTAURANTE COMUNITÁRIO</td>
+                <td>Padrão</td>
+                <td>700x700</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_700x700.gif')">Visualizar</button></td>
+            <tr>
+                <td>11</td>
+                <td>RESTAURANTE COMUNITÁRIO</td>
+                <td>Padrão</td>
+                <td>728x90</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_728x90.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>RESTAURANTE COMUNITÁRIO</td>
+                <td>Padrão</td>
+                <td>970x90</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_970x90.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>RESTAURANTE COMUNITÁRIO</td>
+                <td>Padrão</td>
+                <td>970x250</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_970x250.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>SERVIDORES CONTRATADOS</td>
+                <td>Padrão</td>
+                <td>300x50</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_300x50.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>SERVIDORES CONTRATADOS</td>
+                <td>Padrão</td>
+                <td>300x100</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_300x100.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>SERVIDORES CONTRATADOS</td>
+                <td>Padrão</td>
+                <td>3000x250</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_300x250.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>SERVIDORES CONTRATADOS</td>
+                <td>Padrão</td>
+                <td>300x300</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_300x300.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>SERVIDORES CONTRATADOS</td>
+                <td>Padrão</td>
+                <td>300x600</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_300x600.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>SERVIDORES CONTRATADOS</td>
+                <td>Padrão</td>
+                <td>320x50</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_320x50.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>SERVIDORES CONTRATADOS</td>
+                <td>Padrão</td>
+                <td>320x100</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_320x100.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>SERVIDORES CONTRATADOS</td>
+                <td>Padrão</td>
+                <td>468x60</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_468x60.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>SERVIDORES CONTRATADOS</td>
+                <td>Padrão</td>
+                <td>560x735</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_560x735.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>SERVIDORES CONTRATADOS</td>
+                <td>Padrão</td>
+                <td>700x700</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                    <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_700x700.gif')">Visualizar</button></td>
+                </tr>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>SERVIDORES CONTRATADOS</td>
+                <td>Padrão</td>
+                <td>728x90</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                    <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_728x90.gif')">Visualizar</button></td>
+                </tr>
+            <tr>
+                <td>25</td>
+                <td>SERVIDORES CONTRATADOS</td>
+                <td>Padrão</td>
+                <td>970x90</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_970x90.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>SERVIDORES CONTRATADOS</td>
+                <td>Padrão</td>
+                <td>970x250</td>
+                <td>100kb</td>
+                <td>Indeterminado</td>
+                <td>Sim</td>
+                <td>Gif</td>
+                <td>Desenvolvimento</td>
+                <td><button class="btn-view" onclick="viewGif('C:\\Users\\home\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_970x250.gif')">Visualizar</button></td>
+            </tr>
+            <tr>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn-view" onclick="showAllGifs()">Ver Todos</button>
+    
+    <div class="gif-viewer" id="gifViewer">
+        <button class="close" onclick="closeGifViewer()">&times;</button>
+        <img id="gifImage" src="" alt="Gif Viewer">
+    </div>
+
+    <div class="show-all" id="allGifs" style="display: none;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_300x50.gif.gif" alt="300x50" style="width: 300px; height: 50px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_300X100.gif" alt="300x100" style="width: 300px; height: 100px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_300x250.gif" alt="300x250" style="width: 300px; height: 250px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_300x300.gif" alt="300x300" style="width: 300px; height: 300px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_300x600.gif" alt="300x600" style="width: 300px; height: 600px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_320x50.gif" alt="320x50" style="width: 320px; height: 50px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_320x100.gif" alt="320x100" style="width: 320px; height: 100px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_468x60.gif" alt="468x60" style="width: 468px; height: 60px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_560x735.gif" alt="560x735" style="width: 560px; height: 735px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_700x700.gif" alt="700x700" style="width: 700px; height: 700px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_728x90.gif" alt="728x90" style="width: 728px; height: 90px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_970x90.gif" alt="970x90" style="width: 970px; height: 90px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_RESTAURANTE-COMUNITARIO_970x250.gif" alt="970x250"style="width: 970px; height: 250px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_300x50.gif" alt="300x50" style="width: 300px; height: 50px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_300x100.gif" alt="300x100" style="width: 300px; height: 100px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_300x250.gif" alt="300x250" style="width: 300px; height: 250px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_300x300.gif" alt="300x300" style="width: 300px; height: 300px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_300x600.gif" alt="300x600" style="width: 300px; height: 600px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_320x50.gif" alt="320x50" style="width: 320px; height: 50px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_320x100.gif" alt="320x100" style="width: 320px; height: 100px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_468x60.gif" alt="468x60" style="width: 468x; height: 60px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_560x735.gif" alt="560x735" style="width: 560px; height: 735px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_700x700.gif" alt="700x700" style="width: 700px; height: 700px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_728x90.gif" alt="728x90" style="width: 728px; height: 90px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_970x90.gif" alt="970x90" style="width: 970px; height: 90px;">
+        <img src="C:\Users\home\OneDrive\Área de Trabalho\Nova pasta (2)\BA_GDF-FimdeAno_SERVIDORES-CONTRATADOS_970x250.gif" alt="970x250" style="width: 970px; height: 250px;">
+    </div>
+</div>
+<cript>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIF Viewer</title>
+  <style>
+    /* Estilo básico */
+    #gifViewer {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+    #gifViewer img {
+      max-width: 100%;
+      height: auto;
+    }
+    #allGifs {
+      display: none;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .gif-item {
+      cursor: pointer;
+      max-width: 150px;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="showAllGifs()">Mostrar Todos os GIFs</button>
+  <div id="allGifs">
+    <img src="gif1.gif" alt="GIF 1" class="gif-item" onclick="viewGif('gif1.gif')">
+    <img src="gif2.gif" alt="GIF 2" class="gif-item" onclick="viewGif('gif2.gif')">
+    <img src="gif3.gif" alt="GIF 3" class="gif-item" onclick="viewGif('gif3.gif')">
+  </div>
+
+  <div id="gifViewer">
+    <img id="gifImage" src="" alt="Visualizador de GIF">
+    <button onclick="closeGifViewer()">Fechar</button>
+  </div>
+
+  <script>
+    function viewGif(gifPath) {
+      const viewer = document.getElementById('gifViewer');
+      const image = document.getElementById('gifImage');
+      image.src = gifPath;
+      viewer.style.display = 'block';
+    }
+
+    function closeGifViewer() {
+      const viewer = document.getElementById('gifViewer');
+      viewer.style.display = 'none';
+      const image = document.getElementById('gifImage');
+      image.src = '';
+    }
+
+    function showAllGifs() {
+      const allGifsDiv = document.getElementById('allGifs');
+      allGifsDiv.style.display = 'flex';
+      window.scrollTo({ top: allGifsDiv.offsetTop, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
+
+    <script>
+    
+</script>
+</html>
